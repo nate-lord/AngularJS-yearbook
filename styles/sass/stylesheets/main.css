@@ -1,0 +1,688 @@
+@font-face {
+  font-family: 'Menlo-Reg';
+  src: url("../../fonts/Menlo-Regular.eot");
+  src: url("../../fonts/Menlo-Regular.eot?#iefix") format("embedded-opentype"), url("../../fonts/Menlo-Regular.woff") format("woff"), url("../../fonts/Menlo-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Menlo-Reg';
+  src: url("../../fonts/Menlo-Italic.eot");
+  src: url("../../fonts/Menlo-Italic.eot?#iefix") format("embedded-opentype"), url("../../fonts/Menlo-Italic.woff") format("woff"), url("../../fonts/Menlo-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+/* line 25, ../sass/main.scss */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* line 32, ../sass/main.scss */
+html {
+  box-sizing: border-box;
+  font-family: 'Menlo-Reg';
+  font-size: 10px;
+  color: #444;
+}
+
+/* line 39, ../sass/main.scss */
+body {
+  font-size: 1.2rem;
+}
+
+/* line 43, ../sass/main.scss */
+textarea,
+input[type="text"] {
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  overflow: visible;
+  width: 100%;
+  border: 1px solid #111;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  transition: border-color 400ms, color 200ms, background-color 50ms;
+}
+/* line 60, ../sass/main.scss */
+textarea:disabled,
+input[type="text"]:disabled {
+  border-color: transparent;
+  background-color: transparent;
+  color: inherit;
+  -webkit-backdrop-filter: blur(0);
+  backdrop-filter: blur(0);
+}
+/* line 68, ../sass/main.scss */
+textarea.ng-invalid,
+input[type="text"].ng-invalid {
+  border-color: red;
+  color: red;
+}
+
+/* line 74, ../sass/main.scss */
+textarea {
+  resize: none;
+}
+
+/* line 78, ../sass/main.scss */
+nav {
+  position: fixed;
+  top: 3rem;
+  left: 3rem;
+  z-index: 100;
+  transition: transform 250ms, opacity 175ms;
+}
+/* line 87, ../sass/main.scss */
+nav.notVisible {
+  transform: translateX(-4.6rem);
+  opacity: 0;
+}
+
+/* line 93, ../sass/main.scss */
+nav > div {
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+}
+/* line 99, ../sass/main.scss */
+nav > div:last-of-type {
+  margin-bottom: 0;
+}
+
+/* line 104, ../sass/main.scss */
+input[type="radio"][name="profiles"] {
+  position: absolute;
+  z-index: 10;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* line 113, ../sass/main.scss */
+input[type="radio"][name="profiles"]:hover {
+  cursor: pointer;
+}
+/* line 116, ../sass/main.scss */
+input[type="radio"][name="profiles"]:hover:checked:hover {
+  cursor: default;
+}
+
+/* line 122, ../sass/main.scss */
+nav label {
+  position: relative;
+  display: block;
+  width: 1.6rem;
+  height: 1.6rem;
+  font-size: 0;
+  color: transparent;
+  line-height: 0;
+}
+/* line 131, ../sass/main.scss */
+nav label:before, nav label:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 0.8rem;
+  border: 0.2rem solid #444;
+}
+/* line 143, ../sass/main.scss */
+nav label:after {
+  background-color: #fff;
+  transition: transform 0.1s;
+}
+/* line 148, ../sass/main.scss */
+nav label:before {
+  opacity: 0;
+  background-color: #444;
+  transition: opacity 0.05s;
+}
+
+/* line 156, ../sass/main.scss */
+nav input[name="profiles"]:checked + label:after {
+  transform: translate(-0.2rem, -0.2rem);
+}
+/* line 160, ../sass/main.scss */
+nav input[name="profiles"]:checked + label:before {
+  opacity: 1;
+}
+
+/* line 167, ../sass/main.scss */
+footer {
+  position: fixed;
+  bottom: 3rem;
+  right: 1.8rem;
+  z-index: 100;
+  transform: rotate(270deg);
+}
+
+/* line 175, ../sass/main.scss */
+input[type="checkbox"][name="toggleEdit"] {
+  position: absolute;
+  z-index: 10;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* line 184, ../sass/main.scss */
+input[type="checkbox"][name="toggleEdit"]:hover {
+  cursor: pointer;
+}
+/* line 188, ../sass/main.scss */
+input[type="checkbox"][name="toggleEdit"]:disabled:hover {
+  cursor: no-drop;
+}
+
+/* line 193, ../sass/main.scss */
+footer label {
+  font-size: 1.2rem;
+  line-height: 1;
+  text-align: right;
+  padding: 0.4rem;
+  background-color: #fff;
+  position: relative;
+  transition: color 0.2s, background-color 0.2s;
+}
+/* line 203, ../sass/main.scss */
+footer label:before {
+  content: '';
+  position: absolute;
+  background-color: red;
+  height: 1px;
+  width: 100%;
+  top: 12px;
+  left: 1px;
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+/* line 217, ../sass/main.scss */
+footer input:hover + label {
+  color: #fff;
+  background-color: #111;
+}
+
+/* line 222, ../sass/main.scss */
+footer input:disabled + label {
+  color: red;
+}
+/* line 225, ../sass/main.scss */
+footer input:disabled + label:before {
+  opacity: 1;
+}
+
+/* line 230, ../sass/main.scss */
+footer input:disabled:hover + label {
+  color: red;
+  background-color: #fff;
+}
+
+/* line 237, ../sass/main.scss */
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100vh;
+  max-height: 67rem;
+  width: 100%;
+  max-width: 133rem;
+  transform: translate(-50%, -50%);
+}
+@media (max-width: 650px) {
+  /* line 237, ../sass/main.scss */
+  main {
+    top: 0;
+    height: auto;
+    transform: translateX(-50%);
+    padding: 20px 0;
+    width: 440px;
+  }
+}
+@media (max-width: 516px) {
+  /* line 237, ../sass/main.scss */
+  main {
+    width: calc( 100% - 7.6rem );
+  }
+}
+
+/* line 260, ../sass/main.scss */
+form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+@media (max-width: 650px) {
+  /* line 260, ../sass/main.scss */
+  form {
+    position: relative;
+    top: auto;
+    left: auto;
+    height: auto;
+  }
+}
+
+/* line 277, ../sass/main.scss */
+form > header {
+  position: absolute;
+  left: 6.5rem;
+  right: calc( 50% + 5rem );
+  top: 5rem;
+  z-index: 10;
+  transition: opacity 200ms, transform 200ms;
+}
+/* line 287, ../sass/main.scss */
+form > header.hide {
+  opacity: 0;
+  transform: translateY(-5px);
+}
+@media (max-width: 650px) {
+  /* line 287, ../sass/main.scss */
+  form > header.hide {
+    transform: translateY(0);
+  }
+}
+@media (max-width: 650px) {
+  /* line 277, ../sass/main.scss */
+  form > header {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    margin: 0 auto 1.1rem auto;
+  }
+}
+
+/* line 305, ../sass/main.scss */
+form h1 {
+  text-align: right;
+  font-size: 7.4rem;
+  margin-bottom: 0.5rem;
+  color: #000;
+  position: relative;
+}
+@media (max-width: 1065px), (max-height: 420px) {
+  /* line 305, ../sass/main.scss */
+  form h1 {
+    font-size: 5rem;
+  }
+}
+@media (max-width: 800px) {
+  /* line 305, ../sass/main.scss */
+  form h1 {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 650px) {
+  /* line 305, ../sass/main.scss */
+  form h1 {
+    font-size: 3.5rem;
+  }
+}
+/* line 324, ../sass/main.scss */
+form h1:after, form h1:before {
+  position: absolute;
+  opacity: 0;
+}
+/* line 330, ../sass/main.scss */
+form h1.invalid:after, form h1.invalid:before {
+  opacity: 1;
+}
+/* line 335, ../sass/main.scss */
+form h1:before {
+  transition: opacity 400ms;
+  content: '9 char max';
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  border: 1px solid red;
+  font-size: 1.2rem;
+  color: red;
+  width: 10rem;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -12rem;
+  text-align: center;
+}
+@media (max-width: 1065px), (max-height: 420px) {
+  /* line 335, ../sass/main.scss */
+  form h1:before {
+    padding: 0.5rem;
+  }
+}
+@media (max-width: 800px) {
+  /* line 335, ../sass/main.scss */
+  form h1:before {
+    font-size: 1rem;
+    width: 8rem;
+    right: -9.5rem;
+  }
+}
+@media (max-width: 650px) {
+  /* line 335, ../sass/main.scss */
+  form h1:before {
+    right: auto;
+    left: 2rem;
+    transform: translateY(0);
+    top: 0;
+  }
+}
+/* line 369, ../sass/main.scss */
+form h1:after {
+  content: '';
+  height: 0.1rem;
+  width: 2rem;
+  right: -2rem;
+  background-color: red;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (max-width: 800px) {
+  /* line 369, ../sass/main.scss */
+  form h1:after {
+    width: 1.5rem;
+    right: -1.5rem;
+  }
+}
+@media (max-width: 650px) {
+  /* line 369, ../sass/main.scss */
+  form h1:after {
+    display: none;
+  }
+}
+
+/* line 391, ../sass/main.scss */
+form > figure {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: calc( 100% - 6rem );
+  max-height: 69rem;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #111;
+  z-index: 1;
+  box-shadow: 1rem 1rem 0 0 #111;
+}
+@media (max-width: 650px) {
+  /* line 391, ../sass/main.scss */
+  form > figure {
+    position: relative;
+    left: 50%;
+    top: auto;
+    transform: translateX(-50%);
+    width: auto;
+    height: auto;
+    float: left;
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* line 416, ../sass/main.scss */
+form > figure img {
+  display: block;
+  height: 100%;
+  width: auto;
+  transition: opacity 200ms, transform 200ms;
+}
+/* line 424, ../sass/main.scss */
+form > figure img.hide {
+  opacity: 0;
+  transform: scale(0.99, 0.99);
+}
+@media (max-width: 650px) {
+  /* line 416, ../sass/main.scss */
+  form > figure img {
+    height: 67rem;
+  }
+}
+@media (max-width: 488px) {
+  /* line 416, ../sass/main.scss */
+  form > figure img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* line 441, ../sass/main.scss */
+dl {
+  position: absolute;
+  right: 3rem;
+  left: calc( 50% + 250px );
+  top: 45%;
+  transform: translateY(-50%);
+  transition: opacity 200ms, transform 200ms;
+}
+/* line 451, ../sass/main.scss */
+dl.hide {
+  opacity: 0;
+  transform: translate(5px, -50%);
+}
+@media (max-width: 650px) {
+  /* line 451, ../sass/main.scss */
+  dl.hide {
+    transform: translate(0, 0);
+  }
+}
+@media (max-width: 800px) {
+  /* line 441, ../sass/main.scss */
+  dl {
+    right: 1rem;
+    left: calc( 50% + 215px );
+  }
+}
+@media (max-width: 650px) {
+  /* line 441, ../sass/main.scss */
+  dl {
+    position: relative;
+    right: auto;
+    left: auto;
+    top: auto;
+    transform: translateY(0);
+    clear: both;
+  }
+}
+
+/* line 475, ../sass/main.scss */
+dl .row + .row {
+  margin-top: 1rem;
+}
+
+/* line 479, ../sass/main.scss */
+dt {
+  padding-left: 0.3rem;
+  border-left: 1px solid transparent;
+}
+
+/* line 484, ../sass/main.scss */
+dl .row:first-child {
+  position: relative;
+}
+/* line 487, ../sass/main.scss */
+dl .row:first-child:after, dl .row:first-child:before {
+  position: absolute;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 400ms;
+}
+/* line 495, ../sass/main.scss */
+dl .row:first-child.invalid:after, dl .row:first-child.invalid:before {
+  opacity: 1;
+}
+/* line 500, ../sass/main.scss */
+dl .row:first-child:before {
+  content: '12 char max';
+  padding: 0.7rem 0.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  border: 1px solid red;
+  font-size: 1.2rem;
+  color: red;
+  width: 11rem;
+  top: -4rem;
+  right: 0;
+  text-align: center;
+}
+/* line 516, ../sass/main.scss */
+dl .row:first-child:after {
+  content: '';
+  height: 2.5rem;
+  width: 0.1rem;
+  top: -0.9rem;
+  background-color: red;
+  right: 0.5rem;
+}
+
+/* line 526, ../sass/main.scss */
+dd:before {
+  display: none;
+}
+
+/* line 530, ../sass/main.scss */
+dd input[type="text"],
+dd textarea {
+  padding: 0.3rem;
+}
+@media (max-width: 650px) {
+  /* line 530, ../sass/main.scss */
+  dd input[type="text"],
+  dd textarea {
+    border-color: #111 transparent transparent transparent;
+  }
+}
+
+/* line 541, ../sass/main.scss */
+blockquote {
+  position: absolute;
+  left: 0;
+  right: calc( 50% + 19.3rem );
+  top: 61%;
+  bottom: 3rem;
+  transition: opacity 200ms, transform 200ms;
+}
+/* line 551, ../sass/main.scss */
+blockquote.hide {
+  opacity: 0;
+  transform: translateX(-5px);
+}
+@media (max-width: 650px) {
+  /* line 551, ../sass/main.scss */
+  blockquote.hide {
+    transform: translateX(0);
+  }
+}
+@media (max-width: 650px) {
+  /* line 541, ../sass/main.scss */
+  blockquote {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    margin-bottom: 2rem;
+  }
+}
+/* line 569, ../sass/main.scss */
+blockquote:after, blockquote:before {
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 400ms;
+}
+/* line 578, ../sass/main.scss */
+blockquote.invalid:after, blockquote.invalid:before {
+  opacity: 1;
+}
+/* line 583, ../sass/main.scss */
+blockquote:before {
+  content: '150 char max';
+  padding: 0.7rem 0.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  border: 1px solid red;
+  font-size: 1.2rem;
+  color: red;
+  width: 11rem;
+  top: -4.4rem;
+  transform: translateX(-50%);
+  left: 50%;
+  text-align: center;
+}
+@media (max-width: 650px) {
+  /* line 583, ../sass/main.scss */
+  blockquote:before {
+    transform: translateX(0);
+    left: auto;
+    top: auto;
+    bottom: 0;
+    right: 0;
+  }
+}
+/* line 607, ../sass/main.scss */
+blockquote:after {
+  content: '';
+  height: 1.5rem;
+  width: 0.1rem;
+  top: -1.3rem;
+  background-color: red;
+  right: 50%;
+  transform: translateX(-50%);
+}
+@media (max-width: 650px) {
+  /* line 607, ../sass/main.scss */
+  blockquote:after {
+    display: none;
+  }
+}
+
+/* line 622, ../sass/main.scss */
+blockquote textarea {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 2rem;
+  max-width: 28rem;
+  width: 100%;
+  text-align: center;
+  font-style: italic;
+  background-color: #fff;
+  padding-top: 0.3rem;
+}
+@media (max-width: 1000px) {
+  /* line 622, ../sass/main.scss */
+  blockquote textarea {
+    max-width: 28rem;
+    width: calc( 100% - 2rem );
+  }
+}
+@media (max-width: 650px) {
+  /* line 622, ../sass/main.scss */
+  blockquote textarea {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    transform: translateX(0);
+    width: 100%;
+    max-width: none;
+    border-color: #111;
+    height: 10rem;
+  }
+}

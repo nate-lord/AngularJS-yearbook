@@ -1,0 +1,215 @@
+/*hard reset*/
+/* begin css reset styles */
+/* line 4, ../sass/hard-reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 8, ../sass/hard-reset.scss */
+a,
+b,
+i,
+p,
+q,
+s,
+u,
+dd,
+dl,
+dt,
+em,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+ol,
+td,
+th,
+tr,
+tt,
+ul,
+big,
+del,
+dfn,
+div,
+img,
+ins,
+kbd,
+nav,
+pre,
+sub,
+sup,
+var,
+abbr,
+body,
+cite,
+code,
+form,
+html,
+mark,
+menu,
+ruby,
+samp,
+span,
+time,
+aside,
+audio,
+embed,
+label,
+small,
+table,
+tbody,
+tfoot,
+thead,
+video,
+applet,
+canvas,
+center,
+figure,
+footer,
+header,
+hgroup,
+iframe,
+legend,
+object,
+output,
+strike,
+strong,
+acronym,
+address,
+article,
+caption,
+details,
+section,
+summary,
+fieldset,
+figcaption,
+blockquote {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+/* line 97, ../sass/hard-reset.scss */
+nav,
+main,
+menu,
+aside,
+header,
+footer,
+figure,
+article,
+details,
+section,
+figcaption {
+  display: block;
+}
+
+/* line 111, ../sass/hard-reset.scss */
+ol,
+ul {
+  list-style: none;
+}
+
+/* line 116, ../sass/hard-reset.scss */
+q,
+blockquote {
+  quotes: none;
+}
+/* line 120, ../sass/hard-reset.scss */
+q:after, q:before,
+blockquote:after,
+blockquote:before {
+  content: '';
+  content: none;
+}
+
+/* line 127, ../sass/hard-reset.scss */
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+/* line 132, ../sass/hard-reset.scss */
+textarea {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  overflow: auto;
+}
+
+@-moz-document url-prefix() {
+  /* line 143, ../sass/hard-reset.scss */
+  input::-moz-focus-inner,
+  button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}
+/* line 150, ../sass/hard-reset.scss */
+button {
+  -webkit-appearance: none;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.8rem;
+  font-family: Ariel, sans-serif;
+  line-height: normal !important;
+  overflow: visible;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: top;
+  text-align: center;
+  text-decoration: none;
+  width: auto;
+}
+
+/* line 174, ../sass/hard-reset.scss */
+input[type='radio'] {
+  margin: 0;
+}
+
+/* line 178, ../sass/hard-reset.scss */
+input[type='text'],
+input[type='password'] {
+  -webkit-appearance: none;
+  background: none;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  border: 0;
+  border-radius: 0;
+  box-sizing: border-box;
+  font-family: Ariel, sans-serif;
+  font-size: 1.6rem;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  text-align: left;
+  vertical-align: top;
+}
+/* line 196, ../sass/hard-reset.scss */
+input[type='text']::-webkit-outer-spin-button, input[type='text']::-webkit-inner-spin-button,
+input[type='password']::-webkit-outer-spin-button,
+input[type='password']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* line 202, ../sass/hard-reset.scss */
+*:focus {
+  outline: none;
+}
+
+/* end css reset styles */
