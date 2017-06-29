@@ -33,7 +33,7 @@ html {
   box-sizing: border-box;
   font-family: 'Menlo-Reg';
   font-size: 10px;
-  color: #444;
+  color: #111;
 }
 
 body {
@@ -57,10 +57,14 @@ input[ type="text" ] {
               color 200ms,
               background-color 50ms;
   
+  &[ disabled ],
+  &[ disabled="disabled" ],
   &:disabled {
     border-color: transparent;
     background-color: transparent;
-    color: inherit;
+    color: #111;
+    -webkit-text-fill-color: #111; 
+    -webkit-opacity: 1; 
     -webkit-backdrop-filter: blur( 0 );
     backdrop-filter: blur( 0 );
   }
@@ -321,6 +325,14 @@ form h1 {
     font-size: 3.5rem;
   }
   
+  input {
+    color: #111;
+    
+    &:disabled {
+      color: #111;
+    }
+  }
+  
   &:after,
   &:before {
     position: absolute;
@@ -534,6 +546,14 @@ dd textarea {
   @media( max-width: 650px ) {
     border-color: #111 transparent transparent transparent;
   }
+  
+  input {
+    color: #111;
+    
+    &:disabled {
+      color: #111;
+    }
+  }
 }
 
 //
@@ -632,6 +652,12 @@ blockquote textarea {
   font-style: italic;
   background-color: #fff;
   padding-top: 0.3rem;
+  color: #111;
+  
+  &:disabled {
+    color: #111;
+  }
+
   
   @media( max-width: 1000px ) {
     max-width: 28rem;
