@@ -1,1 +1,1 @@
-# A small yearbook app: [link](http://natelord.org/guugenheim)
+# A small yearbook app : [here](http://natelord.org/guugenheim)
